@@ -88,7 +88,16 @@
         transform: translateY(5px);
     }
 }
+        /* Hide scroll indicator by default */
+.scroll-indicator {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
+/* Show scroll indicator when active */
+.scroll-indicator.visible {
+    opacity: 1;
+}
 
         /* Ganesh Section - Appears on Scroll */
         .ganesh-overlay {
@@ -1216,13 +1225,17 @@
         
         // Welcome message appears and stays for a while
         const welcomeMessage = document.getElementById('welcomeMessage');
-        if (scrolled > 200 && scrolled < 1000) {
-            welcomeMessage.classList.add('visible');
-        } else {
-            welcomeMessage.classList.remove('visible');
-        }
+const scrollIndicator = document.querySelector('.scroll-indicator');
+
+if (scrolled > 200 && scrolled < 800) {
+    welcomeMessage.classList.add('visible');
+    scrollIndicator.classList.add('visible');
+} else {
+    welcomeMessage.classList.remove('visible');
+    scrollIndicator.classList.remove('visible');
+}
         
-        ticking = false;
+      ticking = false;
     }
 
     window.addEventListener('scroll', () => {

@@ -285,7 +285,8 @@
         }
 
         .section-title::before,
-        .section-title::after {
+        .section-title::after
+        {
             content: '❖';
             position: absolute;
             font-size: 24px;
@@ -300,6 +301,21 @@
         .section-title::after {
             right: -40px;
         }
+        .section-title span {
+    display: block;
+    width: 120px;
+    height: 10px;
+    margin: 12px auto 0;
+
+    border-radius: 50px;
+    background: radial-gradient(
+        circle at 50% 0,
+        transparent 55%,
+        var(--gold) 56%,
+        var(--gold) 65%,
+        transparent 66%
+    );
+}
 
         .section-header {
             text-align: center;
@@ -1013,6 +1029,7 @@
                 <h2 class="section-title">
                     <br>
                     जोड़ी / Meet The Couple
+                    <span></span>
                 </h2>
             </div>
             
@@ -1049,6 +1066,7 @@
                 <h2 class="section-title">
                     <br>
                    शादी समारोह / Wedding Celebrations
+                    <span></span>
                 </h2>
             </div>
             
@@ -1110,6 +1128,7 @@
                 <h2 class="section-title">
                     <br>
                     बस कुछ पल बाकी / Counting Down To Forever
+                    <span></span>
                 </h2>
             </div>
             <div class="countdown-timer">
@@ -1176,6 +1195,7 @@
                 <h2 class="section-title">
                     <br>
                     स्थान और दिशा-निर्देश / Venue & Directions
+                    <span></span>
                 </h2>
             </div>
             
@@ -1228,6 +1248,7 @@
             <h2 class="section-title">
                 <br>
                आरएसवीपी / RSVP
+                <span></span>
                 <br>
                 TIBREWAL FAMILY
             </h2>

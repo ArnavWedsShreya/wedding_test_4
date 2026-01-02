@@ -399,9 +399,27 @@
 
         /* Wedding Functions Section */
         .functions-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #f5e6d3 0%, var(--cream) 100%);
-        }
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+
+    background-image: url('wedding-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.functions-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 248, 220, 0.9); /* cream overlay */
+    z-index: 0;
+}
+.functions-section > * {
+    position: relative;
+    z-index: 1;
+}
 
         .functions-section .section-title {
             color: var(--royal-red);

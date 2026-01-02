@@ -458,10 +458,15 @@
             z-index: 1;
             pointer-events: none;
         }
-
+/* Increase opacity for mobile */
+@media (max-width: 768px) {
+    .functions-bg {
+        opacity: 0.25;
+    }
         .functions-section .section-title {
             color: var(--royal-red);
         }
+    }
 
         .functions-container {
             max-width: 1200px;

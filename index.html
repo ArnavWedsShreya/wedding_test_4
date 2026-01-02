@@ -36,6 +36,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .hero-bg {
             position: fixed;
             top: 0;
@@ -46,79 +47,6 @@
             z-index: 1;
             transition: all 0.1s ease-out;
         }
-        /* Blurred background behind welcome */
-.hero-bg-blur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: url('hero-image.jpg') center/cover no-repeat;
-    filter: blur(12px) brightness(0.7);
-    transform: scale(1.1);
-    z-index: 0;
-}
-
-        /* Scroll indicator */
-.scroll-indicator {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateX(-1px);
-    transform: translateX(-50%);
-    z-index: 20;
-    pointer-events: none;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    animation: bounce 1.8s infinite;
-    text-align: center;
-}
-
-.scroll-text {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 4px;
-    line-height: 1;
-}
-
-.scroll-arrow {
-    font-size: 52px;
-    line-height: 1;
-    color: #ffffff;
-    display: block;
-}
-/* Soft glow for scroll indicator */
-.scroll-text,
-.scroll-arrow {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
-}
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(10px);
-    }
-    60% {
-        transform: translateY(5px);
-    }
-}
-        /* Hide scroll indicator by default */
-.scroll-indicator {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-/* Show scroll indicator when active */
-.scroll-indicator.visible {
-    opacity: 1;
-}
 
         /* Ganesh Section - Appears on Scroll */
         .ganesh-overlay {
@@ -854,86 +782,118 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            /* Fix welcome box cut-off on mobile */
-.welcome-message {
-    top: 50%;
-    transform: translate(-50%, -52%);
-}
+            .ganesh-text {
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
 
-.welcome-text {
-    font-size: clamp(18px, 4vw, 22px);
-    line-height: 1.5;
-}
+            .ganesh-img {
+                width: 30px;
+                height: 30px;
+            }
 
-.welcome-box {
-    padding: 20px 18px;
-    max-height: 88vh;
-    overflow-y: auto;
-}
-            /* Reduce ALL text inside welcome box */
-.welcome-box * {
-    font-size: 85%;
-}
+            .welcome-text {
+                font-size: 36px;
+            }
 
-    /* Mobile heading enhancement */
-    .section-title {
-        position: relative;
-        padding-bottom: 12px;
-    }
-            
-    .section-title::after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 2px;
-        background: var(--gold);
-        margin: 10px auto 0;
-    }
+            .couple-names-welcome {
+                font-size: 32px;
+            }
 
-    .ganesh-text {
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
+            .wedding-date-location {
+                font-size: 16px;
+            }
 
-    .ganesh-img {
-        width: 30px;
-        height: 30px;
-    }
+            .welcome-box {
+                padding: 30px 25px;
+            }
 
-    .welcome-text {
-        font-size: 36px;
-    }
+            .section-title {
+                font-size: 28px;
+            }
 
-    .couple-names-welcome {
-        font-size: 26px;
-    letter-spacing: 2px;
-    }
+            .section-title-hindi {
+                font-size: 26px;
+            }
 
-    .wedding-date-location {
-        font-size: 14px;
-    }
+            .section-title::before,
+            .section-title::after {
+                display: none;
+            }
 
-    .welcome-box {
-        padding: 30px 25px;
-    }
+            .couple-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
 
-    .section-title {
-        font-size: 28px;
-    }
+            .person-photo {
+                width: 200px;
+                height: 200px;
+            }
 
-    .section-title::before,
-    .section-title::after {
-        display: none;
-    }
+            .person-title {
+                font-size: 24px;
+            }
 
-    .person-name {
-        font-size: 38px;
-    }
+            .person-name {
+                font-size: 38px;
+            }
 
-    .phone-numbers {
-        flex-direction: column;
-        gap: 20px;
-    }
+            .parent-name {
+                font-size: 18px;
+            }
+
+            .countdown-item {
+                padding: 20px 25px;
+                min-width: 100px;
+            }
+
+            .countdown-number {
+                font-size: 36px;
+            }
+
+            .function-name {
+                font-size: 32px;
+            }
+
+            .function-date {
+                font-size: 22px;
+            }
+
+            .function-time {
+                font-size: 18px;
+            }
+
+            .blessings-content,
+            .story-content {
+                padding: 40px 30px;
+            }
+
+            .blessings-title,
+            .story-title {
+                font-size: 32px;
+            }
+
+            .blessings-title-hindi,
+            .story-title-hindi {
+                font-size: 28px;
+            }
+
+            .blessings-text,
+            .story-text {
+                font-size: 18px;
+                line-height: 1.8;
+            }
+
+            .blessings-invite {
+                font-size: 20px;
+            }
+
+            .phone-numbers {
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .venue-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -969,8 +929,7 @@
 
     <!-- Hero Section with Parallax Background -->
     <section class="hero-section">
-    <div class="hero-bg-blur"></div>
-    <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-bg" id="heroBg"></div>
         
         <!-- Welcome Message - Appears on Scroll -->
         <div class="welcome-message" id="welcomeMessage">
@@ -986,11 +945,6 @@
                 <div class="wedding-date-location">10TH FEBRUARY | GHAZIABAD</div>
             </div>
         </div>
-        <!-- Scroll Down Indicator -->
-<div class="scroll-indicator">
-    <div class="scroll-text">Scroll</div>
-    <span class="scroll-arrow">⌄</span>
-</div>
     </section>
 
     <!-- Main Content Wrapper -->
@@ -1147,7 +1101,7 @@
                 </h2>
                 <div class="divider"></div>
                 <p class="blessings-text">
-                    With the gracious blessings of our parents, elders, and Lord Ganesha, we invite you to be a part of our joyous union.
+                    With the gracious blessings of Lord Ganesha, our parents and elders, we invite you to be a part of our joyous union.
                 </p>
                 <p class="blessings-text">
                     May this new chapter be filled with love, happiness, and prosperity.
@@ -1267,24 +1221,14 @@
         }
         
         // Welcome message appears and stays for a while
-const welcomeMessage = document.getElementById('welcomeMessage');
-const scrollIndicator = document.querySelector('.scroll-indicator');
-
-// Welcome message logic (unchanged behavior)
-if (scrolled > 200 && scrolled < 800) {
-    welcomeMessage.classList.add('visible');
-} else {
-    welcomeMessage.classList.remove('visible');
-}
-
-// Scroll arrow logic (IMPROVED)
-if (scrolled < 300) {
-    scrollIndicator.classList.add('visible');
-} else {
-    scrollIndicator.classList.remove('visible');
-}
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        if (scrolled > 200 && scrolled < 1000) {
+            welcomeMessage.classList.add('visible');
+        } else {
+            welcomeMessage.classList.remove('visible');
+        }
         
-      ticking = false;
+        ticking = false;
     }
 
     window.addEventListener('scroll', () => {
